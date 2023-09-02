@@ -11,11 +11,6 @@ you need to download the <PS2X\_lib.h> library to be able to compile the project
 Future updates may include a Computer Vision ML model that would drive the car and arm to shoot water or catch or even hit certain targets.
 
 
-
-
-
-
-
 this Project's main objective is to provide US THE LEARNERS with an introduction to the usage of AVR-MicroControllers, Robotic Motors and Mechanics, Arduino code, PS2 controller, and other Concepts that were made easier to understand by playing around with them.
 
 Many thanks to @hshokry for making such a beautiful and meaningful project possible,You're really an Inspiration and a Guide, Thanks is the least I can say.
