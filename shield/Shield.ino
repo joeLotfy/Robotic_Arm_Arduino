@@ -17,8 +17,6 @@ void setup() {
 	Motor2.setSpeed(180);
 	Motor3.setSpeed(180);
 	Motor4.setSpeed(180);
-	
-
 }
 
 void loop() {
