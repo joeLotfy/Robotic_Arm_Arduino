@@ -1,9 +1,9 @@
-:egypt:
-Made with good intentions :gift_heart:
+# DISPLACABLE ROBOTIC ARM WITH SPRAY
+## Made with good intentions :gift_heart:
 
-This an arduino-based robotic arm project, A 4 joints Arm installed on a rotating base (total 5 joints), With three wheels attached to it, Two rear dc-motors weels, And a third un-controlled wheel, Both -the car and the arm- are controlled by ONE PS2 controller, this project in total uses 8 dc-motors, 2 Arduino UNO, 1 L293D Motor Driver Arduino Shield Module, 2 L298N H-bridge Motor Driver Module and alot of effort.
+This an arduino-based robotic arm project, A 4 joints Arm installed on a rotating base (total 5 joints), With three wheels attached to the base, Two rear dc-motors weels, And a third un-controlled 360° wheel, Both -the car and the arm- are controlled by ONE PS2 controller, this project in total uses 8 dc-motors, 2 Arduino UNO, 4 L298N H-bridge Motor Driver Module, a lot of Code, and alot of effort.
 
-The arm intially has a **Medical-based** purpose, maybe more advanced ones will be inside the operations room with the surgeons, put for now this maybe beneficial for **remote treaments** and **Medical examination and diagnosis**, such as **Covid Patients**
+The arm intially has a **Medical-based** purpose, maybe more advanced ones will be inside the operations room with the surgeons, but for now this maybe beneficial for **remote treaments** and **Remote Medical examination and diagnosis**, such as **Covid-19 Patients**
 
 the car's purpose isn't just a show-off, but to give the arm more moving freedom.
 
@@ -24,5 +24,3 @@ this Project's main objective is to provide US THE LEARNERS with an introduction
 Many Thanks to @hshokry for making such a beautiful and meaningful project possible, You're really an Inspiration and a Guide, Thanks is just the least I can say.
 
 Thanks also to my colleague AHMED HAMADA who doesn't have a github account yet (LOL), So I commited his updates in the code.
-
-Thanks to my Professor the Head of Electrical Engineering Department at The Higher Institute of Engineering and Technology-Sohag Prof/ AL-TAIB ABDEEN IBRAHEM.
