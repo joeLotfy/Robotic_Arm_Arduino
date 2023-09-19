@@ -1,9 +1,9 @@
 //استغفر الله العظيم
 //TX (Transmitter)
 //MASTER Arduino
-
+/*
 connections:
-TX(10) with RX(13)
+TX(12) with RX(11)
 common ground
 ////////////////////////////////////////// 
 1- data ------>A0
@@ -16,30 +16,32 @@ common ground
 8-desconsolad
 9-acknokelage
 */
+
+
 #include <SoftwareSerial.h>
 #include <PS2X_lib.h>
 PS2X ps2x;
 int error = 0;
 byte vaibrate = 0;
-SoftwareSerial myserial(13,10);  //(RX,TX)
+SoftwareSerial myserial(11,12);  //(RX,TX)
 
-//#define motor1_1 2
-//#define motor1_2 3
+#define motor1_1 6
+#define motor1_2 7
 
-//#define motor2_1 2
-//#define motor2_2 3
+#define motor2_1 8
+#define motor2_2 9
 
-//#define motor7_1 2  //  car right 
-//#define motor7_2 3  // car right
+#define motor7_1 2  //  car right 
+#define motor7_2 3  // car right
 
-//#define motor8_1 4  // car left
-//#define motor8_2 5  // car left
+#define motor8_1 4  // car left
+#define motor8_2 5  // car left
 
-#define led A4
+#define led 10
 
 //FUNCTIONS
 //motor1
-/*void hold(){
+void hold(){
   digitalWrite(motor1_1, HIGH);
   digitalWrite(motor1_2, LOW);
 }
@@ -49,6 +51,7 @@ void let(){
   digitalWrite(motor1_2, HIGH);
 }
 /////////////////////////////////////////////
+
 //motor2
 void curve_up(){
   digitalWrite(motor2_1, HIGH);
@@ -60,7 +63,7 @@ void curve_down(){
   digitalWrite(motor2_2, HIGH);
 } 
 /////////////////////////////////////////////
-/*
+
 //car
 //motors7&8
 void backward_car(){
@@ -96,8 +99,9 @@ void Left_car(){
   digitalWrite(motor7_2, LOW);    // right motor
   digitalWrite(motor8_1, HIGH);  // left motor
   digitalWrite(motor8_2, LOW);  // left motor
-}*/
+}
 /////////////////////////////////////////////
+
 //led
 void led_on(){
   digitalWrite(led, HIGH);
@@ -107,6 +111,8 @@ void led_off(){
   digitalWrite(led, LOW);
 }
 ///////////////////////////////////////////////////
+
+
 
 void setup(){
   Serial.begin(9600);
@@ -120,28 +126,28 @@ void setup(){
   }
 
   //pin_modes
-  
-//  pinMode(motor1_1, OUTPUT);        
- // pinMode(motor1_2, OUTPUT);  
+  pinMode(motor1_1, OUTPUT);        
+  pinMode(motor1_2, OUTPUT);  
 
+  pinMode(motor2_1, OUTPUT);        
+  pinMode(motor2_2, OUTPUT);
 
- // pinMode(motor2_1, OUTPUT);        
-  //pinMode(motor2_2, OUTPUT);
-/*
   //car
   pinMode(motor7_1, OUTPUT);
   pinMode(motor7_2, OUTPUT);
   pinMode(motor8_1, OUTPUT);        
   pinMode(motor8_2, OUTPUT);
 
+  //led
   pinMode(led, OUTPUT);
-  */
 }
+
+
 
 void loop(){
   ps2x.read_gamepad(false,vaibrate); //vibrate all time
-/*
-   if(ps2x.Button(PSB_L1)!=0){
+
+  if(ps2x.Button(PSB_L1)!=0){
     Serial.println("L1 pressed");
     let();
   }
@@ -154,6 +160,7 @@ void loop(){
     digitalWrite(motor1_2, LOW);
   }
   ////////////////////////////////////////////////////////////////////////////////////////////////
+
   if(ps2x.Button(PSB_PINK)!=0){
     Serial.println("square pressed");
     curve_down();
@@ -167,6 +174,7 @@ void loop(){
     digitalWrite(motor2_2, LOW);
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////
+
   if(ps2x.Analog(PSS_LX)||ps2x.Analog(PSS_LY))
   {
     Serial.print(ps2x.Analog(PSS_LX),DEC);
@@ -191,7 +199,7 @@ void loop(){
   }
   ///////////////////////////////////////////////////////////////////////////////////////////
 
- if(ps2x.Button(PSB_START)){
+  if(ps2x.Button(PSB_START)){
     Serial.println("START pressed");
     led_on();
   }
@@ -203,7 +211,7 @@ void loop(){
 
 
   //SLAVE arduino 
-  */if(ps2x.Button(PSB_GREEN)!=0){
+  if(ps2x.Button(PSB_GREEN)!=0){
     Serial.println("T");
     myserial.println('T');
   }
@@ -212,7 +220,7 @@ void loop(){
     myserial.println('X');
   }
   ///////////////////////////////////////////////////////////////////////////////////////////
-/*
+
   if(ps2x.Button(PSB_PAD_UP)!=0){
     Serial.println("UP pressed");
     myserial.println('U');
@@ -239,5 +247,4 @@ void loop(){
   }
   ///////////////////////////////////////////////////////////////////////////////////
   delay(10);// for delay(WoooooooW)
-*/
 }
